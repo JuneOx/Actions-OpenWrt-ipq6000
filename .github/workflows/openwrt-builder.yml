@@ -54,8 +54,8 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone --depth 1 -b main --single-branch $REPO_BRANCH 
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt-6.x
+        git clone --depth 1 -b main --single-branch $REPO_BRANCH  openwrt
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
       run: |
