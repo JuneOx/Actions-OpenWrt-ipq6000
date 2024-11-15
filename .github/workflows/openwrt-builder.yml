@@ -78,6 +78,12 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
+    - name: Setup Debug Session
+      uses: mxschmitt/action-tmate@v3
+      timeout-minutes: 15
+      with:
+        detached: false
+
     - name: Download package
       id: package
       run: |
@@ -159,8 +165,3 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Setup Debug Session
-      uses: mxschmitt/action-tmate@v3
-      timeout-minutes: 15
-      with:
-        detached: true
