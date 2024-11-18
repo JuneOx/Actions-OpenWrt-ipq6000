@@ -54,7 +54,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone --depth 1 -b main --single-branch https://github.com/King-Of-Knights/openwrt-6.x.git openwrt
+        git clone --depth 1 -b main --single-branch https://github.com/juneox/openwrt-6.x.git openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
@@ -82,7 +82,7 @@ jobs:
       uses: mxschmitt/action-tmate@v3
       timeout-minutes: 15
       with:
-        detached: false
+        detached: true
 
     - name: Download package
       id: package
