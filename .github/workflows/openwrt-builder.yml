@@ -18,6 +18,7 @@ on:
 
 env:
   REPO_URL: https://github.com/JuneOx/openwrt-6.x.git
+  #REPO_URL: https://github.com/JuneOx/openwrt-6.x-Libwrt-op.git
   REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
@@ -54,7 +55,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone --depth 1 -b main --single-branch https://github.com/juneox/openwrt-6.x.git openwrt
+        git clone https://github.com/JuneOx/openwrt-6.x-Libwrt-op.git openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
